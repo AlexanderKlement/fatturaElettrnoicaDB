@@ -69,8 +69,6 @@ class Cloud
         return $this->codice_destinatario;
     }
 
-
-
     /**
      * @param string $codice_destinatario
      */
@@ -86,8 +84,7 @@ class Cloud
         {
             $temp = new Cloud();
             $temp->setPIva($piva);
-            $temp->fatturas = [];
-            saveDoc($temp);
+            $dm->persist($temp);
         }
         if($temp instanceof Cloud)
             return $temp;
@@ -110,13 +107,8 @@ class Cloud
         $this->name = $name;
     }
 
-    /**
-     * @return array
-     */
-    public function getFatturas(): array
-    {
-        return $this->fatturas;
-    }
+
+
 
 
 }

@@ -215,7 +215,6 @@ class Client
         if($temp instanceof Client ||$temp == null){
             return $temp;
         } else{
-            Sentry\captureMessage("Unable to get Client from ClientRepository");
             throw new RuntimeException("Unable to get Client from ClientRepository");
         }
     }

@@ -4,7 +4,6 @@ namespace FattEleDB;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 use Exception;
-use Sentry;
 use RuntimeException;
 
 /** @ODM\Document */
