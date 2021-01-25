@@ -1,0 +1,16 @@
+{
+    "name": "klementAlexander/fatturaElettronicaMongo",
+    "type": "library",
+    "description": "my mongo db db files i use in multiple packages",
+    "keywords": ["relevant","tags","go","here"],
+    "homepage": "https://fattura.bz",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Alexander Klement",
+            "email": "alexander.klement@gmail.com",
+            "homepage": "https://feldthurns.online",
+            "role": "Developer"
+        }
+    ],
+}
