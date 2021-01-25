@@ -1,5 +1,5 @@
 {
-    "name": "klementAlexander/fatturaElettronicaMongo",
+    "name": "klement-alexander/fattura-elettronica-mongo",
     "type": "library",
     "description": "my mongo db db files i use in multiple packages",
     "keywords": ["relevant","tags","go","here"],
