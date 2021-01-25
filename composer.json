@@ -1,16 +1,24 @@
 {
-    "name": "klement-alexander/fattura-elettronica-mongo",
-    "type": "library",
-    "description": "my mongo db db files i use in multiple packages",
-    "keywords": ["relevant","tags","go","here"],
-    "homepage": "https://fattura.bz",
-    "license": "MIT",
-    "authors": [
-        {
-            "name": "Alexander Klement",
-            "email": "alexander.klement@gmail.com",
-            "homepage": "https://feldthurns.online",
-            "role": "Developer"
-        }
-    ]
+  "name": "klement-alexander/fattura-elettronica-mongo",
+  "type": "library",
+  "description": "my mongo db db files i use in multiple packages",
+  "keywords": [
+    "fattura-elettronica",
+    "mongo"
+  ],
+  "homepage": "https://fattura.bz",
+  "license": "MIT",
+  "minimum-stability": "dev",
+  "require": {
+    "php": ">=7.4",
+    "doctrine/mongodb-odm-bundle": "*"
+  },
+  "authors": [
+    {
+      "name": "Alexander Klement",
+      "email": "alexander.klement@gmail.com",
+      "homepage": "https://feldthurns.online",
+      "role": "Developer"
+    }
+  ]
 }
