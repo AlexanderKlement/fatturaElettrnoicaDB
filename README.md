@@ -1,1 +1,1 @@
-# fatturaElettrnoicaDB
+# fatturaElettronicaDB
