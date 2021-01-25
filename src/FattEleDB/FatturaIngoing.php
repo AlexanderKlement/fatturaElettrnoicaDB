@@ -2,7 +2,7 @@
 
 
 
-namespace fattEleDB;
+namespace FattEleDB;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 

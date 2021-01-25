@@ -1,6 +1,6 @@
 <?php
 
-namespace fattEleDB;
+namespace FattEleDB;
 
 /** @ODM\Document */
 class FatturaOutgoing extends Fattura

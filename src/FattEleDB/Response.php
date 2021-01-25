@@ -1,6 +1,6 @@
 <?php
 
-namespace fattEleDB;
+namespace FattEleDB;
 
 class Response
 {
