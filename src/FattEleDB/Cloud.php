@@ -3,6 +3,7 @@
 namespace FattEleDB;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
+use Doctrine\ODM\MongoDB\PersistentCollection;
 use RuntimeException;
 
 /** @ODM\Document */
@@ -24,7 +25,7 @@ class Cloud
     private string $name;
 
     /** @ODM\ReferenceMany(targetDocument=Fattura::class, mappedBy="cloud") */
-    private array $fatturas;
+    private PersistentCollection $fatturas;
 
     //TODO: add users here
 

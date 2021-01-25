@@ -3,8 +3,8 @@
 namespace FattEleDB;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
+use Doctrine\ODM\MongoDB\PersistentCollection;
 use Exception;
-use Sentry;
 use RuntimeException;
 
 /** @ODM\Document  */
@@ -45,7 +45,7 @@ class Client
     private int $payment_type;
 
     /** @ODM\ReferenceMany(targetDocument=Fattura::class, mappedBy="client") */
-    private array $fatturas;
+    private PersistentCollection $fatturas;
 
     /**
      * @return string
@@ -78,7 +78,6 @@ class Client
     {
         $this->lastname = $lastname;
     }
-
 
 
     /**
