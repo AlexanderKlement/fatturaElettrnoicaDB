@@ -3,6 +3,7 @@
 namespace FattEleDB;
 
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
+use Doctrine\ODM\MongoDB\PersistentCollection;
 use Exception;
 use Sentry;
 use RuntimeException;
@@ -50,8 +51,8 @@ abstract class Fattura
     /** @ODM\Field(type="string") */
     private string $type;
 
-    /** @ODM\ReferenceOne(targetDocument=Response::class, cascade={"all"}) */
-    private Response $response;
+    /** @ODM\ReferenceMany(targetDocument=Response::class, mappedBy="fattura") */
+    private PersistentCollection $responses;
 
     /**
      * @return string
@@ -261,8 +262,9 @@ abstract class Fattura
         $this->cloud = $cloud;
     }
 
+    public static function getOneBySdiId($id){
 
-
+    }
 
 
 
