@@ -84,6 +84,7 @@ class Cloud
         {
             $temp = new Cloud();
             $temp->setPIva($piva);
+            $temp->setUrl("");
             $dm->persist($temp);
         }
         if($temp instanceof Cloud)
@@ -107,6 +108,9 @@ class Cloud
         $this->name = $name;
     }
 
+    public function validate() {
+        return strlen($this->getUrl()) > 0;
+    }
 
 
 

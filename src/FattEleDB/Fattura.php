@@ -245,6 +245,22 @@ abstract class Fattura
         $this->type = $type;
     }
 
+    /**
+     * @return Cloud
+     */
+    public function getCloud(): Cloud
+    {
+        return $this->cloud;
+    }
+
+    /**
+     * @param Cloud $cloud
+     */
+    public function setCloud(Cloud $cloud): void
+    {
+        $this->cloud = $cloud;
+    }
+
 
 
 
