@@ -263,6 +263,8 @@ abstract class Fattura
     }
 
     public static function getOneBySdiId($id){
+        global $dm;
+        return $dm->getRepository(Fattura::class)->findOneBy(["id_sdi" => $id]);
 
     }
 

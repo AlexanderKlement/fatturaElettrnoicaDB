@@ -8,9 +8,6 @@ class Response
     private string $id;
 
     /** @ODM\Field(type="string") */
-    private string $response_id_sdi;
-
-    /** @ODM\Field(type="string") */
     private string $date;
 
     /** @ODM\Field(type="string") */
@@ -21,22 +18,6 @@ class Response
 
     /** @ODM\ReferenceOne(targetDocument=Fattura::class, inversedBy="responses") */
     private Fattura $fattura;
-
-    /**
-     * @return string
-     */
-    public function getResponseIdSdi(): string
-    {
-        return $this->response_id_sdi;
-    }
-
-    /**
-     * @param string $response_id_sdi
-     */
-    public function setResponseIdSdi(string $response_id_sdi): void
-    {
-        $this->response_id_sdi = $response_id_sdi;
-    }
 
     /**
      * @return string
