@@ -2,6 +2,7 @@
 
 namespace FattEleDB;
 
+use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 class Response
 {
     /** @ODM\Id */

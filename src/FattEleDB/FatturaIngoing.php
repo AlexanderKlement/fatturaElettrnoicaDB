@@ -46,7 +46,4 @@ class FatturaIngoing extends Fattura
         throw new RuntimeException("Expected IngoingFattura, but got something else");
     }
 
-
-
-
 }
