@@ -262,10 +262,5 @@ abstract class Fattura
         $this->cloud = $cloud;
     }
 
-    public static function getOneBySdiId($id): ?object
-    {
-        global $dm;
-        return $dm->getRepository(Fattura::class)->findOneBy(["id_sdi" => $id]);
-    }
 
 }
