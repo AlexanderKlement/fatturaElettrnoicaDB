@@ -5,7 +5,6 @@ namespace FattEleDB;
 use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 use Doctrine\ODM\MongoDB\PersistentCollection;
 use Exception;
-use Sentry;
 use RuntimeException;
 
 /**
