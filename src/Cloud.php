@@ -10,7 +10,7 @@ use RuntimeException;
 class Cloud
 {
     /** @ODM\Id */
-    private string $id;
+    private ?string $id = NULL;
 
     /** @ODM\Field(type="string") */
     private string $url;
@@ -29,20 +29,20 @@ class Cloud
 
     //TODO: add users here
 
-    /**
-     * @return string
-     */
-    public function getUrl(): string
+    public static function getByPIva(string $piva)
     {
-        return $this->url;
-    }
-
-    /**
-     * @param string $url
-     */
-    public function setUrl(string $url): void
-    {
-        $this->url = $url;
+        global $dm;
+        $temp = $dm->getRepository(Cloud::class)->findOneBy([ "p_iva" => $piva ]);
+        if($temp == NULL)
+        {
+            $temp = new Cloud();
+            $temp->setPIva($piva);
+            $temp->setUrl("");
+            $dm->persist($temp);
+        }
+        if($temp instanceof Cloud)
+            return $temp;
+        throw new RuntimeException('This is not an instance of Value');
     }
 
     /**
@@ -77,21 +77,6 @@ class Cloud
         $this->codice_destinatario = $codice_destinatario;
     }
 
-    public static function getByPIva(string $piva){
-        global $dm;
-        $temp = $dm->getRepository(Cloud::class)->findOneBy(["p_iva" => $piva]);
-        if($temp == NULL)
-        {
-            $temp = new Cloud();
-            $temp->setPIva($piva);
-            $temp->setUrl("");
-            $dm->persist($temp);
-        }
-        if($temp instanceof Cloud)
-            return $temp;
-        throw new RuntimeException('This is not an instance of Value');
-    }
-
     /**
      * @return string
      */
@@ -108,11 +93,25 @@ class Cloud
         $this->name = $name;
     }
 
-    public function validate() {
+    public function validate()
+    {
         return strlen($this->getUrl()) > 0;
     }
 
+    /**
+     * @return string
+     */
+    public function getUrl(): string
+    {
+        return $this->url;
+    }
 
-
+    /**
+     * @param string $url
+     */
+    public function setUrl(string $url): void
+    {
+        $this->url = $url;
+    }
 
 }

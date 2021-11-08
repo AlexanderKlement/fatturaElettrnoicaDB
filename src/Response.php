@@ -8,7 +8,7 @@ use Doctrine\ODM\MongoDB\Mapping\Annotations as ODM;
 class Response
 {
     /** @ODM\Id */
-    private ?string $id = null;
+    private ?string $id = NULL;
 
     /** @ODM\Field(type="string") */
     private string $date;

@@ -15,7 +15,7 @@ abstract class Fattura
 {
 
     /** @ODM\Id */
-    private string $id;
+    private ?string $id = NULL;
 
     /** @ODM\Field(type="string") */
     private string $number;
@@ -260,6 +260,5 @@ abstract class Fattura
     {
         $this->cloud = $cloud;
     }
-
 
 }

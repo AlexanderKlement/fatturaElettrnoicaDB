@@ -7,12 +7,12 @@ use Doctrine\ODM\MongoDB\PersistentCollection;
 use Exception;
 use RuntimeException;
 
-/** @ODM\Document  */
+/** @ODM\Document */
 class Client
 {
 
     /** @ODM\Id */
-    private string $id;
+    private ?string $id = NULL;
 
     /** @ODM\Field(type="string") */
     private string $name;
@@ -47,6 +47,19 @@ class Client
     /** @ODM\ReferenceMany(targetDocument=Fattura::class, mappedBy="client") */
     private PersistentCollection $fatturas;
 
+    public static function getByIva(string $iva): ?Client
+    {
+        global $dm;
+        $temp = $dm->getRepository(Client::class)->findOneBy([ "p_iva" => $iva ]);
+        if($temp instanceof Client || $temp == NULL)
+        {
+            return $temp;
+        } else
+        {
+            throw new RuntimeException("Unable to get Client from ClientRepository");
+        }
+    }
+
     /**
      * @return string
      */
@@ -78,7 +91,6 @@ class Client
     {
         $this->lastname = $lastname;
     }
-
 
     /**
      * @return Address
@@ -206,16 +218,5 @@ class Client
     public function setPaymentType(int $payment_type): void
     {
         $this->payment_type = $payment_type;
-    }
-
-    public static function getByIva(string $iva):?Client
-    {
-        global $dm;
-        $temp =  $dm->getRepository(Client::class)->findOneBy(["p_iva" => $iva]);
-        if($temp instanceof Client ||$temp == null){
-            return $temp;
-        } else{
-            throw new RuntimeException("Unable to get Client from ClientRepository");
-        }
     }
 }

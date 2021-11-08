@@ -10,7 +10,7 @@ use RuntimeException;
 class Address
 {
     /** @ODM\Id */
-    private string $id;
+    private ?string $id = NULL;
 
     /** @ODM\Field(type="string") */
     private string $street;
@@ -125,7 +125,5 @@ class Address
     {
         $this->nation = $nation;
     }
-
-
 
 }
