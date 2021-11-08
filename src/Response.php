@@ -11,16 +11,16 @@ class Response
     private ?string $id = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $date;
+    private ?string $date= NULL;
 
     /** @ODM\Field(type="string") */
-    private string $path;
+    private ?string $path= NULL;
 
     /** @ODM\Field(type="string") */
-    private string $type;
+    private ?string $type= NULL;
 
     /** @ODM\ReferenceOne(targetDocument=Fattura::class, inversedBy="responses") */
-    private Fattura $fattura;
+    private ?Fattura $fattura= NULL;
 
     /**
      * @return string

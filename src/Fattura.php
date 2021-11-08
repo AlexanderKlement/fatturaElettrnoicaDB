@@ -18,40 +18,40 @@ abstract class Fattura
     private ?string $id = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $number;
+    private ?string $number = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $date;
+    private ?string $date = NULL;
 
     /** @ODM\Field(type="float") */
-    private float $amount;
+    private ?float $amount = NULL;
 
     /** @ODM\ReferenceOne(targetDocument=Client::class, inversedBy="fatturas") */
-    private Client $client;
+    private ?Client $client = NULL;
 
     /** @ODM\ReferenceOne(targetDocument=Cloud::class, inversedBy="fatturas") */
-    private Cloud $cloud;
+    private ?Cloud $cloud = NULL;
 
     /** @ODM\Field(type="boolean") */
-    private bool $deleted;
+    private ?bool $deleted = NULL;
 
     /** @ODM\Field(type="string") */
-    private ?string $paid;
+    private ?string $paid = NULL;
 
     /** @ODM\Field(type="string") */
-    private ?string $id_sdi;
+    private ?string $id_sdi = NULL;
 
     /** @ODM\Field(type="string") */
-    private ?string $data_pagamento;
+    private ?string $data_pagamento = NULL;
 
     /** @ODM\Field(type="string") */
-    private ?string $fattura_path;
+    private ?string $fattura_path = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $type;
+    private ?string $type = NULL;
 
     /** @ODM\ReferenceMany(targetDocument=Response::class, mappedBy="fattura") */
-    private PersistentCollection $responses;
+    private ?PersistentCollection $responses = NULL;
 
     /**
      * @return string

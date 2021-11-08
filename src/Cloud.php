@@ -13,16 +13,16 @@ class Cloud
     private ?string $id = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $url;
+    private ?string $url = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $p_iva;
+    private ?string $p_iva = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $codice_destinatario;
+    private ?string $codice_destinatario = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $name;
+    private ?string $name = NULL;
 
     /** @ODM\ReferenceMany(targetDocument=Fattura::class, mappedBy="cloud") */
     private PersistentCollection $fatturas;

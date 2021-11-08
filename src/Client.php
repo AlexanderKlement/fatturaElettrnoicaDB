@@ -15,37 +15,37 @@ class Client
     private ?string $id = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $name;
+    private ?string $name = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $lastname;
+    private ?string $lastname = NULL;
 
     /** @ODM\ReferenceOne(targetDocument=Address::class, cascade={"all"}) */
-    private Address $address;
+    private ?Address $address = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $p_iva;
+    private ?string $p_iva = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $codex;
+    private ?string $codex = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $email;
+    private ?string $email = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $codice_fiscale;
+    private ?string $codice_fiscale = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $client_pec;
+    private ?string $client_pec = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $regime_fiscale;
+    private ?string $regime_fiscale = NULL;
 
     /** @ODM\Field(type="int") */
-    private int $payment_type;
+    private ?int $payment_type = NULL;
 
     /** @ODM\ReferenceMany(targetDocument=Fattura::class, mappedBy="client") */
-    private PersistentCollection $fatturas;
+    private ?PersistentCollection $fatturas = NULL;
 
     public static function getByIva(string $iva): ?Client
     {

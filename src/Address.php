@@ -13,22 +13,22 @@ class Address
     private ?string $id = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $street;
+    private ?string $street = NULL;
 
     /** @ODM\Field(type="string") */
-    private ?string $houseNumber;
+    private ?string $houseNumber = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $cap;
+    private ?string $cap = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $city;
+    private ?string $city = NULL;
 
     /** @ODM\Field(type="string") */
-    private ?string $region;
+    private ?string $region = NULL;
 
     /** @ODM\Field(type="string") */
-    private string $nation;
+    private ?string $nation = NULL;
 
     /**
      * @return string
